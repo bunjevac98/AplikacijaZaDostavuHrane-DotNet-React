@@ -30,7 +30,5 @@ namespace aspnetserver.Data
         public TipKorisnika TipKorisnika { get; set; }
         [Required]
         public string Slika { get; set; } = string.Empty;
-
-
     }
 }
