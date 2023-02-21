@@ -7,7 +7,7 @@ import React, { useState, useEffect } from "react";
 export default function App() {
 
   const [korisnici, setKorisnici] = useState([]);
-
+  
   useEffect(() => {
     fetch("https://localhost:7220/get-all-korisnici")
       .then(response => response.json())
@@ -32,7 +32,7 @@ export default function App() {
       <h1>
         Dostava hrane
       </h1>
-      <div className="mt-2">
+      <div className="mt-3">
         {renderPostTable()}
       </div>
     </div >
@@ -51,7 +51,6 @@ export default function App() {
             <th scope="col">E-mail</th>
             <th scope="col">Datum rodjenja</th>
             <th scope="col">Tip korisnika</th>
-            <th scope="col">Akcije</th>
           </tr>
         </thead>
         <tbody>
@@ -59,8 +58,6 @@ export default function App() {
             <tr key={korisnik.korisnikId}>
               <td>{korisnik.korisnikId}</td>
               <td>{korisnik.korisnickoIme}</td>
-              <td>{korisnik.ime}</td>
-              <td>{korisnik.prezime}</td>
               <td>{korisnik.ime}</td>
               <td>{korisnik.prezime}</td>
               <td>{korisnik.email}</td>
